@@ -4,7 +4,7 @@ controller.listc = (req, res) =>
 {
     req.getConnection((err, conn) => 
     {
-      conn.query('SELECT * FROM Casos', (err, casos) => 
+      conn.query('SELECT * FROM casos', (err, casos) => 
       {
         if (err) 
         {
