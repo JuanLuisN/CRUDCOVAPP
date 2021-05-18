@@ -16,7 +16,7 @@ const hospRoute = require('./routes/hospital');
 const usersRoute = require('./routes/usuarios');
 
 //settings
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 2000);
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'views'));
 
@@ -134,8 +134,8 @@ app.post('/auth',passport.authenticate('local',{
 app.use(express.static(path.join(__dirname,'public')));
 
 //starting server
-app.listen(app.get('port'), function(){
-    console.log(`Server on port ${app.get('port')}`);
+app.listen(app.get('port'), ()=>{
+    console.log(`Server on port 2000`);
 });
 
 //loggin without passport
