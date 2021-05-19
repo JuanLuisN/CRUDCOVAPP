@@ -18,7 +18,6 @@ const hospRoute = require('./routes/hospital');
 const usersRoute = require('./routes/usuarios');
 
 //settings
-app.set('port',process.env.PORT || 2000);
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'views'));
 
@@ -35,8 +34,8 @@ app.use(myConnection(mysql,
 app.use(express.urlencoded({extended: false}));
 
 //invocamos dotenv
-//const dotenv = require('dotenv');
-//dotenv.config({path:'./env/.env'});
+const dotenv = require('dotenv');
+dotenv.config({path:'./env/.env'});
 
 
 //configuracion para guardar las sessiones
