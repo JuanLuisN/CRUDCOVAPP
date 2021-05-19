@@ -149,9 +149,12 @@ app.post('/auth',passport.authenticate('local',{
 app.use(express.static(path.join(__dirname,'public')));
 
 //starting server
-app.listen(app.get('port'), ()=>{
-    console.log(`Server on port 2000`);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d", this.address().port);
 });
+/*app.listen(app.get('port'), ()=>{
+    console.log(`Server on port 2000`);
+});/*
 
 //loggin without passport
 /*app.post('/auth', (req, res)=>{
