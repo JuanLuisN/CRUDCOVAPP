@@ -5,6 +5,7 @@ const mysql = require('mysql');
 const session = require('express-session');
 const myConnection = require('express-myconnection');
 const flash = require('connect-flash');
+const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const passportLocal = require('passport-local').Strategy;
 const MySqlStore = require('express-mysql-session')(session);
@@ -47,13 +48,15 @@ let options ={
     database:'b5pofpw3ei4wd0sy1eea',
 
 };
+app.use(cookieParser());
 var sessionStore = new MySqlStore(options);
 
 //variables de sesion
 app.use(session({
     secret:"secret",
-    resave: true,
-    saveUninitialized: true,
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
 }));
 
 app.use(passport.initialize());
