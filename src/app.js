@@ -33,8 +33,8 @@ app.use(myConnection(mysql,
 app.use(express.urlencoded({extended: false}));
 
 //invocamos dotenv
-const dotenv = require('dotenv');
-dotenv.config({path:'./env/.env'});
+//const dotenv = require('dotenv');
+//dotenv.config({path:'./env/.env'});
 
 
 //variables de sesion
