@@ -7,6 +7,7 @@ const myConnection = require('express-myconnection');
 const flash = require('connect-flash');
 const passport = require('passport');
 const passportLocal = require('passport-local').Strategy;
+const MySqlStore = require('express-mysql-session')(session);
 const app = express();
 
 
@@ -36,6 +37,30 @@ app.use(express.urlencoded({extended: false}));
 //const dotenv = require('dotenv');
 //dotenv.config({path:'./env/.env'});
 
+
+//configuracion para guardar las sessiones
+let options ={
+    host:'b5pofpw3ei4wd0sy1eea-mysql.services.clever-cloud.com',
+    port: 3306,
+    clearExpired: true,
+    user: 'u5hoog4tmttkkj9h',
+    password: '9bOEXNcsoAueiw8JA0xL',
+    database:'b5pofpw3ei4wd0sy1eea',
+    endConnectionOnClose: true,
+	charset: 'utf8mb4_bin',
+    expiration: 10000,
+	createDatabaseTable: true,
+	schema: {
+		tableName: 'sessions',
+		columnNames: {
+			session_id: 'session_id',
+			expires: 'expires',
+			data: 'data'
+		}
+	}
+
+};
+var sessionStore = new MySqlStore(options);
 
 //variables de sesion
 app.use(session({
