@@ -46,8 +46,6 @@ let options ={
     user: 'u5hoog4tmttkkj9h',
     password: '9bOEXNcsoAueiw8JA0xL',
     database:'b5pofpw3ei4wd0sy1eea',
-    endConnectionOnClose: true,
-	charset: 'utf8mb4_bin',
     expiration: 10000,
 	createDatabaseTable: true,
 	schema: {
