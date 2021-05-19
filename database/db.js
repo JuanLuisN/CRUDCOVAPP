@@ -1,18 +1,18 @@
 const mysql = require('mysql');
-const connection = mysql.createConnection({
+
+const pool = mysql.createPool({
     host: 'b5pofpw3ei4wd0sy1eea-mysql.services.clever-cloud.com',
     user: 'u5hoog4tmttkkj9h',
     password: '9bOEXNcsoAueiw8JA0xL',
     database: 'b5pofpw3ei4wd0sy1eea'
-
-});
-connection.connect((error)=>{
-    if(error){
-        console.log('Error en la conexion'+error)
-        return;
+})
+pool.getConnection((err, connection)=>{
+    if(err){
+        console.error('conexion con la bd cerrada')
     }
-    console.log('Conexion correcta');
-
+    if(connection) connection.release();
+    console.log('Db conectada');
+    return;
 })
 
-module.exports = connection;
+module.exports = pool;
