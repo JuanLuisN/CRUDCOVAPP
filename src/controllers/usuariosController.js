@@ -69,7 +69,6 @@ controller.list= (req, res) =>
     {
       conn.query('DELETE FROM usuarios WHERE idusuario = ?', [Userid],(err, rows) =>
       {
-        console.log(username);
         req.flash('success_msg','Usuario '+Userid+' eliminado exitosamente');
         res.redirect('/usuarioslist');
       })
