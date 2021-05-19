@@ -42,20 +42,9 @@ app.use(express.urlencoded({extended: false}));
 let options ={
     host:'b5pofpw3ei4wd0sy1eea-mysql.services.clever-cloud.com',
     port: 3306,
-    clearExpired: true,
     user: 'u5hoog4tmttkkj9h',
     password: '9bOEXNcsoAueiw8JA0xL',
     database:'b5pofpw3ei4wd0sy1eea',
-    expiration: 10000,
-	createDatabaseTable: true,
-	schema: {
-		tableName: 'sessions',
-		columnNames: {
-			session_id: 'session_id',
-			expires: 'expires',
-			data: 'data'
-		}
-	}
 
 };
 var sessionStore = new MySqlStore(options);
