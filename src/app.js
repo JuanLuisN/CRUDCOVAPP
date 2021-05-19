@@ -48,7 +48,8 @@ let options ={
 
 };
 app.use(cookieParser());
-var sessionStore = new MySqlStore(options);
+var poolConnect = mysql.createPool(options);
+var sessionStore = new MySqlStore(options,poolConnect);
 
 //variables de sesion
 app.use(session({
