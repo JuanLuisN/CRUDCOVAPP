@@ -55,8 +55,8 @@ var sessionStore = new MySqlStore(options,poolConnect);
 app.use(session({
     secret:"secret",
     store: sessionStore,
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
 }));
 
 app.use(passport.initialize());
