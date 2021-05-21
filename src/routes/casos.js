@@ -6,7 +6,7 @@ const {isAuthenticated}= require('../helpers/auth');
 const casosController = require('../controllers/casosController');
 
 router.get('/casos',isAuthenticated, casosController.listc);
-router.post('/add',isAuthenticated, casosController.savec);
+router.post('/addcasos',isAuthenticated, casosController.savec);
 router.get('/delete/:IdCasos',isAuthenticated,casosController.deletec);
 router.get('/update/:IdCasos',isAuthenticated,casosController.editc);
 router.post('/update/:IdCasos',isAuthenticated,casosController.updatec);
