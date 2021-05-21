@@ -1,5 +1,17 @@
 <% include partials/_header %>
+<div class="container mt-5 ">
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn bg-dark text-white btn-outline-primary btn-block" data-toggle="modal" data-target="#casos">
+               <strong>AGREGAR REGISTRO</strong> 
+              </button>
+        </div>
+    </div>
+</div>
 
+<% if(success_msg.length>0){%>
+    <% include partials/_alertsuccess %>
+<%}%>
 <div class="container">
     <div class="row mt-5">
         <div class="col-md-12">
@@ -30,7 +42,7 @@
                                 <td><%= data[i].recuperados %></td>
                                 <td><%= data[i].activos %></td>
                                 <td><%= data[i].fecha %></td>
-                                <td><%= data[i].semaforo %></td>
+                                <td><%= data[i].semaforo %></td>  
                                 <td>
                                     <a href="/delete/<%= data[i].IdCasos %>" class="btn btn-outline-warning">ELIMINAR<a><br>
                                         <a href="/update/<%= data[i].IdCasos %>" class="btn btn-outline-info">ACTUALIZAR<a>   
@@ -41,51 +53,8 @@
                 </tbody>
             </table>
         </div>
-        <% if(success_msg.length>0){%>
-           <% include partials/_alertsuccess %>
-        <%}%>
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/add" method="POST">
-                        <div class="form-group">
-                            <input type="number" name="confirmados" placeholder="Casos confirmados" class="form-control" min="0" required >
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="negativos" placeholder="Casos negativos" class="form-control" min="0" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="sospechosos" placeholder="Casos sospechosos" class="form-control" min="0"required >
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="defunciones" placeholder="Defunciones" class="form-control" min="0" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="recuperados" placeholder="Casos recuperados" class="form-control"min="0" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="activos" placeholder="Casos activos" class="form-control" min="0"required >
-                        </div>
-                        <div class="form-group">
-                            <input type="date" name="fecha" placeholder="Fecha de los casos" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <select name="semaforo"  placeholder="Semaforo" class="form-control" required>
-                                <option value="Rojo">Rojo</option>
-                                <option value="Naranja">Naranja </option>
-                                <option value="Amarillo">Amarillo</option>
-                                <option value="Verde">Verde</option>
-                              </select>
-                        </div>
-                        <button type="submit" class="btn btn-outline-success">
-                            Guardar datos
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-       
-    </div>
-</div>
-
+     
+        
+<% include partials/_modal %>
 <% include partials/_footer %>
+
