@@ -1,50 +1,53 @@
-<div id="casos" class="modal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Agregar Registro</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form action="/addcasos" method="POST">
-                <div class="form-group">
-                    <input type="number" name="confirmados" placeholder="Casos confirmados" class="form-control" min="0" required >
-                </div>
-                <div class="form-group">
-                    <input type="number" name="negativos" placeholder="Casos negativos" class="form-control" min="0" required>
-                </div>
-                <div class="form-group">
-                    <input type="number" name="sospechosos" placeholder="Casos sospechosos" class="form-control" min="0"required >
-                </div>
-                <div class="form-group">
-                    <input type="number" name="defunciones" placeholder="Defunciones" class="form-control" min="0" required>
-                </div>
-                <div class="form-group">
-                    <input type="number" name="recuperados" placeholder="Casos recuperados" class="form-control"min="0" required>
-                </div>
-                <div class="form-group">
-                    <input type="number" name="activos" placeholder="Casos activos" class="form-control" min="0"required >
-                </div>
-                <div class="form-group">
-                    <input type="date" name="fecha" placeholder="Fecha de los casos" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <select name="semaforo"  value="Rojo" placeholder="Semaforo" class="form-control" required>
-                        <option value="Rojo">Rojo</option>
-                        <option value="Naranja">Naranja </option>
-                        <option value="Amarillo">Amarillo</option>
-                        <option value="Verde">Verde</option>
-                      </select>
-                </div>
-                <button type="submit" class="btn btn-block btn-outline-success">
-                    Guardar datos
-                </button>
-                <a class="btn btn-block btn-outline-danger" href="/casos ">Cancelar</a> 
-            </form>
-        </div>
+
+<div class="container-fluid">
+    <div id="casos" class="modal modal-fullscreen-sm-down" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Agregar Registro</h5>
+              <a href="/casos" class="close" >
+                <span aria-hidden="true">&times;</span>
+            </a>
+            </div>
+            <div class="modal-body">
+                <form action="/addcasos" method="POST">
+                    <div class="form-group">
+                        <input type="number" name="confirmados" placeholder="Casos confirmados" class="form-control" min="0" required >
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="negativos" placeholder="Casos negativos" class="form-control" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="sospechosos" placeholder="Casos sospechosos" class="form-control" min="0"required >
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="defunciones" placeholder="Defunciones" class="form-control" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="recuperados" placeholder="Casos recuperados" class="form-control"min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="activos" placeholder="Casos activos" class="form-control" min="0"required >
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="fecha" placeholder="Fecha de los casos" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="semaforo"  value="Rojo" placeholder="Semaforo" class="form-control" required>
+                            <option value="Rojo">Rojo</option>
+                            <option value="Naranja">Naranja </option>
+                            <option value="Amarillo">Amarillo</option>
+                            <option value="Verde">Verde</option>
+                          </select>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-outline-success">
+                        Guardar datos
+                    </button>
+                    <a class="btn btn-block btn-outline-danger" href="/casos ">Cancelar</a> 
+                </form>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+</div>
