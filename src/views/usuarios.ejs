@@ -1,14 +1,26 @@
 <% include partials/_header %>
+<div class="container mt-5 ">
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn bg-dark text-white btn-outline-dark btn-block" data-bs-toggle="modal" data-bs-target="#adduser">
+               <strong>REGISTRAR NUEVO USUARIO</strong> 
+              </button>
+        </div>
+    </div>
+</div>
+<% if(success_msg.length>0){%>
+    <% include partials/_alertsuccess %>
+<%}%>
 <div class="container">
     <div class="row mt-5">
         <div class="col-md-12">
-            <table class="table table-dark table-striped">
+            <table class="table text-center  table-responsive table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Nombre</th>
                         <th>Nombre de Usuario</th>
-                        <th>Actions</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,8 +31,14 @@
                                 <td><%= datos[i].nombre %></td>
                                 <td><%= datos[i].nombreU %></td>
                                 <td>
-                                    <a href="/deleteusuario/<%= datos[i].idusuario %>" class="btn btn-outline-warning">ELIMINAR<a><br>
-                                    <a href="/updateusuario/<%= datos[i].idusuario %>" class="btn btn-outline-info">ACTUALIZAR<a>   
+                                     <!--Calling Delete modal from partials-->                                       
+                                     <% include partials/_deleteusersmodal %>
+                                     <!--/Delete modal-->  
+                                     </div>
+                                     <button type="button" class="btn btn-outline-warning mb-2" data-bs-toggle="modal" data-bs-target="#eliminaruser<%=datos[i].idusuario%>">
+                                         Eliminar
+                                       </button>
+                                    <a href="/updateusuario/<%= datos[i].idusuario %>" class="btn btn-block btn-outline-info">Actualizar<a>   
                                 </td>
                             </tr>
                         <% } %>
@@ -28,29 +46,8 @@
                 </tbody>
             </table>
         </div>
-        <% if(success_msg.length>0){%>
-            <% include partials/_alertsuccess %>
-        <%}%>
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/addusuario" method="POST">
-                        <div class="form-group">
-                            <input id="nombre" type="text" name="nombre" placeholder="Nombre" class="form-control" min="0" required >
-                        </div>
-                        <div class="form-group">
-                            <input id="nombreuser" type="text" name="nombreU" placeholder="Nombre de Usuario" class="form-control" min="0" required>
-                        </div>
-                        <div class="form-group">
-                            <input id="password" type="password" name="contra" placeholder="Contraseña" class="form-control" min="0"required >
-                        </div>
-                        <button id="guardar" type="submit" class="btn btn-outline-success">
-                            Guardar datos
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+      
     </div>
 </div>
+<% include partials/_addusersmodal %>
 <% include partials/_footer %>
