@@ -32,13 +32,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/usuarioslist">Usuarios</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/logout">Salir</a>
-                  </li>
-              </ul>
+                </ul>
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item text-end">
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <%=user.nombreU%>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="/logout">Salir</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>            
             </div>
           </nav>
         </div>    
     </header>
-
-    
