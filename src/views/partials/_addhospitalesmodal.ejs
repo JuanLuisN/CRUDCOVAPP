@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div id="addhospital" class="modal modal-fullscreen-sm-down" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title justify-content-center">Agregar Hospital</h5>
+              <a href="/hospitallist" class="close" >
+                <span aria-hidden="true">&times;</span>
+            </a>
+            </div>
+            <div class="modal-body">
+                <form action="/addhospital" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="Nombre del hospital" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text"  name="direccion" placeholder="Dirección del hospital" class="form-control" required>
+                    </div>   
+                    <label for="Atencion">Nivel de Atencion</label>
+                    <div class="form-group">                
+                            <select name="nivelaten"  placeholder="Nivel de Atencion" class="form-control" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                              </select> 
+                    </div>
+                    <div class="form-group">
+                        <input type="text"  name="telefono" placeholder="Telefono" class="form-control" required>
+                    </div>    
+                    <div class="form-group">
+                        <input type="text"  name="mapa" placeholder="Link del mapa" class="form-control" required>                      
+                    </div>                  
+                        <button type="submit" class="btn btn-block btn-outline-success">
+                            Guardar datos
+                        </button>
+                        <a class="btn btn-block btn-outline-danger" href="/hospitallist">Cancelar</a>    
+                    </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
