@@ -17,21 +17,18 @@
                             <label>Contraseña</label>
                             <input type="text"  name="contra" value="<%= datos.contra %>" placeholder="Contraseña" class="form-control" required>
                         </div>
-                        <button type="submit" class="btn btn-outline-light">
-                            Guardar datos modificados
-                        </button>
+                        <div class="col-auto">
+                            <div class="row">
+                                <button type="submit" class="btn btn-block btn-outline-light">
+                                    Guardar datos modificados
+                                </button>
+                                <a href="/usuarioslist" class="btn btn-block btn-outline-light">Cancelar</a>
+                            </div>                          
+                        </div>      
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 </div>
 <% include partials/_footer %>
