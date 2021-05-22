@@ -2,7 +2,7 @@
 <div class="container mt-5 ">
     <div class="row">
         <div class="col">
-            <button type="button" class="btn bg-dark text-white btn-outline-primary btn-block" data-bs-toggle="modal" data-bs-target="#casos">
+            <button type="button" class="btn bg-dark text-white btn-outline-primary btn-block" data-toggle="modal" data-target="#casos">
                <strong>AGREGAR REGISTRO</strong> 
               </button>
         </div>
@@ -43,8 +43,31 @@
                                 <td><%= data[i].activos %></td>
                                 <td><%= data[i].fecha %></td>
                                 <td><%= data[i].semaforo %></td>  
-                                <td>
-                                    <a href="/delete/<%= data[i].IdCasos %>" class="btn btn-outline-warning">ELIMINAR<a><br>
+                                <td>                                         
+                                    <div id="eliminar<%= data[i].IdCasos %>" class="modal" tabindex="-1">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title text-center">Eliminar Registro</h5>
+                                            <a href="/casos" class="close" >
+                                                <span aria-hidden="true">&times;</span>
+                                            </a>
+                                           
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container mb-3 text-center">
+                                                    <strong class=""> ¿Estas seguro de eliminar el registro <%= data[i].IdCasos %>?</strong>  
+                                                </div> 
+                                                <a href="/delete/<%= data[i].IdCasos %>" class="btn btn-block btn-outline-warning mb-2">Si, eliminar<a>
+                                                <a href="/casos" class="btn btn-block btn-outline-primary">Cancelar<a><br>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#eliminar<%= data[i].IdCasos %>">
+                                        Eliminar
+                                      </button>
                                         <a href="/update/<%= data[i].IdCasos %>" class="btn btn-outline-info">ACTUALIZAR<a>   
                                 </td>
                             </tr>
@@ -57,4 +80,3 @@
         
 <% include partials/_modal %>
 <% include partials/_footer %>
-
