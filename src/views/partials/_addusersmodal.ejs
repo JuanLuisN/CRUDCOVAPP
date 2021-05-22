@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div id="adduser" class="modal modal-fullscreen-sm-down" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title justify-content-center">Registrar Nuevo Usuario</h5>
+              <a href="/usuarioslist" class="close" >
+                <span aria-hidden="true">&times;</span>
+            </a>
+            </div>
+            <div class="modal-body">
+                <form action="/addusuario" method="POST">
+                    <div class="form-group">
+                        <input id="nombre" type="text"  name="nombre" placeholder="Nombre" class="form-control" min="0" required >
+                    </div>
+                    <div class="form-group">
+                        <input id="nombreuser" type="text" name="nombreU" placeholder="Nombre de Usuario" class="form-control" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <input id="password"  type="password" name="contra" placeholder="Contraseña" class="form-control" min="0"required >
+                    </div>
+                        <button type="submit" class="btn btn-block btn-outline-success">
+                            Guardar datos
+                        </button>
+                        <a class="btn btn-block btn-outline-danger" href="/usuarioslist">Cancelar</a>    
+                    </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
