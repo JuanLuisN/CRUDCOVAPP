@@ -24,15 +24,18 @@
                             <label>Telefono</label>
                             <input type="text"  name="telefono" value="<%= data.telefono %>" placeholder="Telefono" class="form-control" required>
                         </div>
-                
+                        <label>Link del mapa</label>
                         <div class="form-group">
-                            <label>Cupos</label>
-                            <input type="number"  name="cupos" value="<%= data.cupos %>" placeholder="Cupos en el hospital" class="form-control" required min="0">
-                        </div>
-                        
-                        <button type="submit" class="btn btn-outline-light">
-                            Guardar datos modificados
-                        </button>
+                            <input type="text"  name="mapa" placeholder="Link del mapa" class="form-control" required>                      
+                        </div>  
+                        <div class="col-auto">
+                            <div class="row">
+                                <button type="submit" class="btn btn-block btn-outline-light">
+                                    Guardar datos modificados
+                                </button>
+                                <a href="/hospitallist" class="btn btn-block btn-outline-light">Cancelar</a>
+                            </div>                          
+                        </div>                                   
                     </form>
                 </div>
             </div>
