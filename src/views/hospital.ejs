@@ -22,6 +22,7 @@
                         <th>Dirección</th>
                         <th>Nivel de Atencion</th>
                         <th>Telefono</th>
+                        <th>Color</th>
                         <th>Mapa</th>
                         <th>Opciones</th>
                     </tr>                  
@@ -35,6 +36,12 @@
                                 <td><%= data[i].direccion %></td>
                                 <td><%= data[i].nivelaten%></td>
                                 <td><%= data[i].telefono %></td>
+                                <%if(data[i].color=='blue darken-5 white-text'){%>
+                                <td>Azul</td>
+                                <% } %>
+                                <%if(data[i].color=='indigo lighten-5'){%>
+                                    <td>Blanco</td>
+                                    <% } %>
                                 <td><iframe src="<%=data[i].mapa%>" width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy"></iframe>     </td>
                                 <td>   
                                      <!--Calling Delete modal from partials-->                                       
