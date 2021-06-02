@@ -17,7 +17,19 @@ controller.listc = (req, res) =>
       });
     });
   };
-  
+  controller.searchc = (req, res)=>
+  {
+  const buscar = req.body.buscar;
+  console.log(buscar)
+  req.getConnection((err, conn)=>{
+      conn.query("select * from casos where fecha like ?",['%'+buscar+'%'],(err, caso)=>{
+          console.log(caso);     
+          res.render('casos',{            
+              data:caso             
+          })
+      })
+  })
+}
   controller.savec = (req, res) =>
   {
     const data = req.body;
