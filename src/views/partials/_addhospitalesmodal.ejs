@@ -1,12 +1,10 @@
 <div class="container-fluid">
-    <div id="addhospital" class="modal modal-fullscreen-sm-down" tabindex="-1">
+    <div id="addhospital" class="modal fade modal-fullscreen-sm-down" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title justify-content-center">Agregar Hospital</h5>
-              <a href="/hospitallist" class="close" >
-                <span aria-hidden="true">&times;</span>
-            </a>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="/addhospital" method="POST">
@@ -32,14 +30,14 @@
                     <label for="Atencion">Color del Collapse</label>
                     <div class="form-group">                
                             <select name="color" value="indigo lighten-5" placeholder="Color" class="form-control" required>
-                                <option value="blue darken-2 white-text">Azul</option>
+                                <option value="blue darken-5 white-text">Azul</option>
                                 <option value="indigo lighten-5">Blanco</option>
                               </select> 
                     </div>      
                         <button type="submit" class="btn btn-block btn-outline-success">
                             Guardar datos
                         </button>
-                        <a class="btn btn-block btn-outline-danger" href="/hospitallist">Cancelar</a>    
+                        <button type="button" class="btn btn-block btn-outline-danger" data-bs-dismiss="modal">Cancelar</button> 
                     </form>
             </div>
             </div>
@@ -47,3 +45,5 @@
         </div>
       </div>
 </div>
+
+
