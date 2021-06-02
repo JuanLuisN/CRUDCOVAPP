@@ -2,6 +2,22 @@ const controller = {};
 
 controller.listc = (req, res) => 
 {
+controller.search = (req, res)=>{
+  const buscar = req.body.buscar;
+  console.log(buscar)
+  req.getConnection((err, conn)=>{
+      conn.query("select * from casos where fecha like ?",['%'+buscar+'%'],(err, caso)=>{
+          console.log(caso);
+          
+          res.render('casos',{
+              
+              data:caso
+              
+          })
+      })
+  })
+}
+    
     req.getConnection((err, conn) => 
     {
       conn.query('SELECT * FROM casos ORDER BY IdCasos DESC', (err, casos) => 
