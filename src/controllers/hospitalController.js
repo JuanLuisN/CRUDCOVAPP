@@ -26,7 +26,6 @@ controller.listc = (req, res) =>
     {
       conn.query('insert into hospitales set ?', [data], (err, hospitales) =>
       {
-        console.log(hospitales);
         req.flash('success_msg','Hospital '+ nombre+' agregado con exito');
         res.redirect('/hospitallist');
       });
