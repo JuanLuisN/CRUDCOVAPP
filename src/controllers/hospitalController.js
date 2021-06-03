@@ -21,6 +21,7 @@ controller.listc = (req, res) =>
   {
     const data = req.body;
     const nombre = req.body.nombre;
+     console.log(data);
     req.getConnection((err,conn) =>
     {
       conn.query('insert into hospitales set ?', [data], (err, hospitales) =>
