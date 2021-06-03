@@ -17,7 +17,6 @@ controller.listc = (req, res) =>
       });
     });
   };
-
   controller.savec = (req, res) =>
   {
     const data = req.body;
@@ -75,5 +74,4 @@ controller.listc = (req, res) =>
       })
     })
   };
-
 module.exports = controller;
